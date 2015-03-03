@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html ng-app="myapp">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <!-- <script src= 'http://code.angularjs.org/angular-1.0.0rc3.min.js'></script>  -->
+
+    <link rel="stylesheet" href="todo.css">
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='todo.js'></script>
+    <script src='draggabilly.pkgd.min.js'></script>
+    <script src='angular-drag-and-drop-lists.js'></script>
+
+    <script src='bower_components/jquery/dist/jquery.js'></script>
+
+    <script src='bower_components/angular-hammer/angular-hammer.js'></script>
+    <script src='bower_components/hammerjs/hammer.min.js'></script>
+    <script src='bower_components/ngRepeatReorder/dist/ngRepeatReorder.js'></script>
+
+  </head>
+
+  <body>
+    <div ng-controller="TodoCtrl" class="container">
+    	<h2> Total todos: {{getTotalTodos()}}</h2>
+        <form class="form-horizontal">
+            <input type="text" ng-model="formTodoText" ng-model-instant>
+            <button class="btn btn-default" ng-click="addTodo()"><i class="glyphicon-plus"> Add</i></button>
+        </form>
+
+        <button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i> Clear Completed</button>
+        
+        <ul class="list-unstyled">
+            <li ng-repeat="todo in todos" class="todoList item">
+                <label class="handle">
+                    <input type="checkbox" ng-model="todo.done" ng-click="todo.done">
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- <div>
+        
+        <h3>Trashcan</h3>
+        <ul dnd-list="[]">
+            <li class="list-unstyled"><img src="img/trashcan.png"></li>
+        </ul>
+    </div>
+ -->
+    
+            
+
+
+    
+    <!--<script src='hammer.min.js'></script> -->
+    <script src='underscore-min.js'></script> <!-- for filtering and deleting completed todos -->
+    
+
+    
+    
+    <!--<script src='bower_components/angular/angular.js'></script>-->
+    
+    
+    
+    
+  </body>
+</html>

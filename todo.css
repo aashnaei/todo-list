@@ -1,0 +1,20 @@
+body{
+
+	background-color: #ddd;
+}
+
+.done-true{
+	text-decoration: line-through;
+	color: gray;
+}
+
+.todoList{
+	margin-top: 8px;
+	width: 100%;
+	height: auto;
+}
+
+.handle:hover {
+  background: #09F;
+}
+
