@@ -10,11 +10,33 @@ body{
 
 .todoList{
 	margin-top: 8px;
-	width: 100%;
-	height: auto;
+	
+}
+
+.item {
+	position:relative;
+	width:140px;
+	height:20px;
+	margin:0px;
+}
+
+.handle {
+	position:absolute;
+	top:-10px;
+	left:-20px;
+	width:140px;
+	height:60px;
+	background:#ccc;
+	z-index:-9999;
+}
+
+.item .content {
+	z-index:999;
 }
 
 .handle:hover {
-  background: #09F;
+  /*background: #09F;*/
+  cursor:move;
 }
+
 

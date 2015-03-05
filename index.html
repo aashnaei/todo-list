@@ -34,14 +34,18 @@
 
         <button class="btn-large" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i> Clear Completed</button>
         
-        <ul class="list-unstyled">
-            <li ng-repeat="todo in todos" class="todoList item">
-                <label class="handle">
+
+        <div  class="todoList">
+            <div ng-repeat="todo in todos" class="item">
+                <div class="handle"></div>
+                <label class="content">
                     <input type="checkbox" ng-model="todo.done" ng-click="todo.done">
                     <span class="done-{{todo.done}}">{{todo.text}}</span>
                 </label>
-            </li>
-        </ul>
+            </div>
+
+            </div>
+       
     </div>
 
 

@@ -25,14 +25,21 @@ myapp.controller('TodoCtrl', function ($scope) {
 		$scope.todos.push({text:$scope.formTodoText, done:false});
 		$scope.formTodoText = '';
 
-		  var todos = document.querySelectorAll('.item');
+		setTimeout(function() {
+
+			console.log('called')
+			 var todos = document.querySelectorAll('.item');
 		  
-		  for ( var i=0, len = todos.length; i < len; i++ ) {
-		    var item = todos[i];
-		    var draggie = new Draggabilly( item, {
-		      handle: '.handle'
-		    });
-		  }
+			  for ( var i=0, len = todos.length; i < len; i++ ) {
+			    var item = todos[i];
+			    var draggie = new Draggabilly( item, {
+			      handle: '.handle'
+			    });
+			  }
+
+		}, 500);
+
+		 
 
 		
 	};
@@ -46,7 +53,8 @@ window.onload = function() {
   for ( var i=0, len = items.length; i < len; i++ ) {
     var item = items[i];
     var draggie = new Draggabilly( item, {
-      handle: '.handle'
+      handle: '.handle',
+      //containment: '.todoList'
     });
   }
 
